@@ -9,6 +9,7 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    publicPath: './', 
   },
   module: {
     rules: [
@@ -21,7 +22,7 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, 'src/index.html'),
-      excludeChunks: ['sw'],
+      excludeChunks: ['sw'], 
     }),
     new CopyWebpackPlugin({
       patterns: [
